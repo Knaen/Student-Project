@@ -1,0 +1,63 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: backend-project
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/users_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: postgres
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  spring:
+    data:
+      redis:
+        host: localhost
+        port: 6379
+        password:
+        timeout: 60000
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+jwt:
+  secret: my-super-secret-key
+  expiration: 86400000
+
+
+  secret=404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970:
+  cloudinary:
+  cloud-name: your-cloud-name
+  api-key: your-api-key
+  api-secret: your-api-secret
+
+logging:
+  level:
+    org.springframework: INFO
+    com.yourpackage: DEBUG
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+
