@@ -6,11 +6,15 @@ import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
+
 @Entity
 @Table
 @Getter
 @Setter
-
 public class Student {
 
     @Id
@@ -42,6 +46,18 @@ public class Student {
     @Column(name = "gpa")
     private Double gpa;
 
+    private Boolean isActive;
+
+    private LocalDate TerminationDate;
     @Column(name = "enrollment_year")
     private Integer enrollmentYear;
+
+    private String studentCode;
+    private List<Subject> subjects;
+
+    private String scholarshipType;
+
+    public Optional<List<Subject>> getSubjects() {
+        return Optional.ofNullable(this.subjects);
+    }
 }

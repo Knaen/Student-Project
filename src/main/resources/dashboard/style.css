@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f8fafc;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- SIDEBAR DIZAYNI --- */
+.sidebar {
+    width: 260px;
+    background: #0f172a; /* Korporativ Tünd Göy */
+    color: #94a3b8;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: fixed;
+    height: 100vh;
+}
+
+.sidebar .logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #1e293b;
+    padding-bottom: 20px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-menu li a {
+    color: #94a3b8;
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    display: block;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu li a.active, .sidebar-menu li a:hover {
+    background: #1e3a8a;
+    color: white;
+}
+
+/* --- ƏSAS KONTENT SAHƏSİ --- */
+.main-content {
+    margin-left: 260px;
+    padding: 40px;
+    width: calc(100% - 260px);
+    max-width: 1200px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.header h1 {
+    color: #1e293b;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.header p {
+    color: #64748b;
+    margin-top: 5px;
+}
+
+/* --- SMART WIDGET CARDS --- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+    color: #64748b;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.card .value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* Xüsusi rəng vurğuları */
+.card.gpa .value { color: #2563eb; }
+.card.scholarship .value { color: #16a34a; font-size: 20px; margin-top: 5px; }
+.card.credits .value { color: #ea580c; }
+
+/* --- SECTIONS (PANELS) --- */
+.section {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 35px;
+}
+
+.section h2 {
+    font-size: 20px;
+    color: #1e293b;
+    margin-bottom: 20px;
+    font-weight: 600;
+    border-left: 4px solid #2563eb;
+    padding-left: 12px;
+}
+
+/* --- PROFIL INTEGRASIYASI --- */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.profile-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    width: 100%;
+}
+
+.info-group p {
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.info-group span {
+    color: #0f172a;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.status-badge {
+    background: #dcfce7;
+    color: #15803d;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* --- POZQUN-SƏLİQƏLİ LIYAHI --- */
+.activity-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.activity-list li {
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 10px;
+    border-left: 4px solid #cbd5e1;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.activity-list li:hover {
+    border-left-color: #2563eb;
+    background: #f1f5f9;
+    padding-left: 20px;
+}
